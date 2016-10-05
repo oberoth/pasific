@@ -39,3 +39,8 @@ REGISTER_TYPED_TEST_CASE_P(pow2ceil_test, exact, round);
 typedef testing::Types<int, long> pow2ceil_types;
 INSTANTIATE_TYPED_TEST_CASE_P(all, pow2ceil_test, pow2ceil_types);
 
+TEST(ring, foo)
+{
+    auto p = pasific::ring<int, 16>::create();
+    ASSERT_EQ(16, p->capacity());
+}
